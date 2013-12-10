@@ -139,9 +139,11 @@ def insertPage():
     newpage['id'] = str(_id)
     del(newpage['_id'])
     print newpage
+    response = flask.jsonify(newpage)
+    response.headers['Access-Control-Allow-Origin'] = '*'
     # FIXME: handle errors
     #return flask.jsonify(status='ok', page=newpage)
-    return flask.jsonify(newpage)
+    return response
 
 
 @app.route('/page/<_id>', methods=['PUT', 'DELETE'])

@@ -1,13 +1,23 @@
 .title {
-  text-align: center;
-  margin: 0 auto;
-  padding: 3px;
-  font-size: 1.5em;
+    text-align: center;
+    margin: 0 auto;
+    padding: 3px;
+    font-size: 1.5em;
 }
 
 #map{
-width: 1000px;
-height: 500px;
-margin-top: 30px;
-position: relative;
+    width: 1000px;
+    height: 500px;
+    margin-top: 30px;
+    position: relative;
+}
+
+.news-item-wrapper{
+    border: 2px solid #DDDDDD;
+    box-shadow: 0 8px 6px -6px #AAAAAA;
+    float: left;
+    height: 100px;
+    margin: 10px;
+    padding: 5px;
+    width: 300px;
 }
