@@ -136,6 +136,8 @@ def insertPage():
     print newpage
     res = siteContent.insert(newpage)
     _id = bson.ObjId(res)
+    siteContent.update({'_id': _id},{"$set":{"name": str(_id)}})
+    newpage = siteContent.find_one({'_id': _id}) #re-create the object as it has been modified
     newpage['id'] = str(_id)
     del(newpage['_id'])
     print newpage
