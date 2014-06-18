@@ -52,13 +52,13 @@
   });
 
   var AudioView = Backbone.View.extend({
-    template: _.template($("#audio-template").html()),
     initialize: function() {
       _.bindAll.apply(_, [this].concat(_.functions(this)));
       _.bind(this.render, this);
     },
     render: function(el) {
-      $(el).append(this.template(src=this.model.get('src')));
+      var template = _.template($("#audio-template").html());
+      $(el).append(template(src=this.model.get('data')));
     }
   });
 

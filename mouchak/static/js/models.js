@@ -34,7 +34,7 @@
 
   var Audio = BaseType.extend({
       defaults: _.extend({
-      src: ""
+      data: ""
     }, BaseType.prototype.defaults),
     initialize:function() {
       BaseType.prototype.initialize.call(this, arguments);
@@ -175,7 +175,7 @@
     },
     initialize: function() {
       this.id = this.get('id');
-    },
+    }
   });
 
   //export types to the typemap
@@ -184,7 +184,7 @@
     'base': BaseType,
     'text': Text,
     'image': Image,
-    'audio': Audio,
+    'audio/ogg': Audio,
     'video': Video,
     'menu': Menu,
     'rss': RSS,
