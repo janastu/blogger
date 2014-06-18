@@ -51,6 +51,17 @@
     }
   });
 
+  var AudioView = Backbone.View.extend({
+    template: _.template($("#audio-template").html()),
+    initialize: function() {
+      _.bindAll.apply(_, [this].concat(_.functions(this)));
+      _.bind(this.render, this);
+    },
+    render: function(el) {
+      $(el).append(this.template(src=this.model.get('src')));
+    }
+  });
+
   var ImageView = Backbone.View.extend({
     tagName: 'img',
     className: '',
@@ -176,6 +187,7 @@
   M.types.view = {
     'text': TextView,
     'image': ImageView,
+    'audio/ogg': AudioView,
     'video': VideoView,
     'rss': RSSView,
     'table': TableView,

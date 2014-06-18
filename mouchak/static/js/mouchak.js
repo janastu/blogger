@@ -122,7 +122,7 @@ var AppRouter = Backbone.Router.extend({
     else {
       $('#navigation').show();
     }
-    M.appView.navView.trigger('navclicked'); 
+    M.appView.navView.trigger('navclicked');
   },
   render404: function() {
     $('.pageview').hide();
@@ -132,7 +132,7 @@ var AppRouter = Backbone.Router.extend({
   }
 });
 
-// hashmap to maintain one-to-one lookup among page ids and 
+// hashmap to maintain one-to-one lookup among page ids and
 // their names
 var nameIdMap = {};
 
@@ -206,7 +206,7 @@ M.appendAttrs = function(model, el) {
   _.each(model.get('attr'), function(val, key) {
     $(el).attr(key, val);
   });
-}
+};
 
 // create the list of tags and associate the objects with related tags
 M.createTagList = function(content, model) {

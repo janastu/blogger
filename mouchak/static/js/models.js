@@ -32,6 +32,15 @@
     }
   });
 
+  var Audio = BaseType.extend({
+      defaults: _.extend({
+      src: ""
+    }, BaseType.prototype.defaults),
+    initialize:function() {
+      BaseType.prototype.initialize.call(this, arguments);
+    }
+  });
+
   var Image = BaseType.extend({
     defaults: _.extend({
       src: ""
@@ -175,6 +184,7 @@
     'base': BaseType,
     'text': Text,
     'image': Image,
+    'audio': Audio,
     'video': Video,
     'menu': Menu,
     'rss': RSS,
@@ -186,6 +196,6 @@
   };
 
   //content types to render in content menu
-  M.contentTypes = ['text', 'image', 'video', 'table', 'plugin', 'map'];
+  M.contentTypes = ['text', 'image', 'video', 'audio/ogg', 'table', 'plugin', 'map'];
 
 })(M);
